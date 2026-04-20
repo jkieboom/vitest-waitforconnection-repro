@@ -1,0 +1,17 @@
+{
+  "name": "vitest-waitforconnection-repro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run --config ./vitest.config.ts",
+    "repro": "node ./run-repro.mjs"
+  },
+  "devDependencies": {
+    "@types/http-proxy": "^1.17.16",
+    "@vitest/browser": "4.1.4",
+    "@vitest/browser-playwright": "4.1.4",
+    "http-proxy": "^1.18.1",
+    "playwright-chromium": "1.55.1",
+    "vitest": "4.1.4"
+  }
+}
