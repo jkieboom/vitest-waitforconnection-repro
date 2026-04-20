@@ -1,7 +1,7 @@
 import { spawn } from "node:child_process";
 
 const cwd = import.meta.dirname;
-const pnpmCommand = process.platform === "win32" ? "pnpm.cmd" : "pnpm";
+const npmExecCommand = process.platform === "win32" ? "npm.cmd" : "npm";
 const dropMarker = "[repro-proxy] dropped first tester websocket before handshake";
 
 const control = await runCase({
@@ -33,8 +33,8 @@ async function runCase({ name, failFirstTesterSocket, timeoutMs }) {
   console.log(`\n=== ${name} ===`);
 
   const child = spawn(
-    pnpmCommand,
-    ["exec", "vitest", "run", "--config", "./vitest.config.ts"],
+    npmExecCommand,
+    ["exec", "--", "vitest", "run", "--config", "./vitest.config.ts"],
     {
       cwd,
       env: {

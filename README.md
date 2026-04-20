@@ -15,7 +15,8 @@ naturally, but the original waiter remains stuck on the stale promise.
 From this directory:
 
 ```sh
-pnpm exec playwright install chromium
+npm install
+npx playwright install chromium
 node ./run-repro.mjs
 ```
 
